@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+:root {
+    --color-fondo: black;
+}
+
+header{
+    background-color: var(--color-fondo);
+    color: white;
+    height: 15vh; /* La unidad de medida "vh" es relativa al tamaño del viewport*/
+    display: grid;
+    position: sticky; /* Esta propiedad junto con el "top: 0;" de abajo hace que el elemento quede fijo en la pantalla aunque se haga scroll hacia abajo */
+    top: 0;
+}
+
+.grid{    
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+h1 {
+    font-family: "Perpetua", sans-serif;
+    font-size: 5vw;
+}
+
+.navbar{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.5vw;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+footer{
+    background-color: var(--color-fondo);
+    color: white;
+    height: 15vh;
+}
