@@ -42,6 +42,14 @@ h1 {
     color: white;
 }
 
+.nav-link {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .nav-link:hover {
+    transform: scale(1.5);
+  }
+ 
 footer{
     background-color: var(--color-fondo);
     color: white;
