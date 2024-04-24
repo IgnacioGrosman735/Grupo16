@@ -1,0 +1,17 @@
+
+.flex{
+    display: flex;
+    /* grid-template-columns: 3fr 1fr; */
+    justify-content: center;
+    width: 100vw;
+}  
+
+.imgindex {
+    max-width: 75%; /* Ajusta el ancho máximo de la imagen según sea necesario */
+}
+
+.text-container p {
+    font-family: "Monotype Corsiva";
+    font-size: 2vw;
+    padding: 50% 25%;
+}

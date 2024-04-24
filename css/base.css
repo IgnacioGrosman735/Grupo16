@@ -15,6 +15,7 @@ header{
     display: grid;
     position: sticky; /* Esta propiedad junto con el "top: 0;" de abajo hace que el elemento quede fijo en la pantalla aunque se haga scroll hacia abajo */
     top: 0;
+    width: 100vw;
 }
 
 .grid{    
@@ -46,12 +47,13 @@ h1 {
     transition: transform 0.3s ease-in-out;
   }
   
-  .nav-link:hover {
+.nav-link:hover {
     transform: scale(1.5);
   }
- 
+
 footer{
     background-color: var(--color-fondo);
     color: white;
     height: 15vh;
+    margin-top: 1vw;
 }

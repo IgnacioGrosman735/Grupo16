@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Barbería</title>
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/turnos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
@@ -16,10 +17,66 @@
             <a class="nav-link" href="sucursales.html">Sucursales</a>
             <a class="nav-link" href="nosotros.html">Nosotros</a>
         </nav>
-    </header>
-    <div>
-        Turnos
-    </div>
+    </header>    
+    <h2>Turnos</h2>
+        <div class="container" >
+                          
+            <form class="form" action="show_data.html" target="_blank">
+                <fieldset class="info">
+                    <legend>Información Personal</legend>
+                        <label for="firstname">Nombre: </label>
+                        <input type="text" id="firstname" name="firstname" placeholder="Nombre">
+                        <label for="lastname">Apellido: </label>
+                        <input type="text" id="lastname" name="lastname" placeholder="Apellido">
+                        <label for="DNI">D.N.I.: </label>
+                        <input type="number" id="DNI" name="D.N.I." placeholder="D.N.I.">
+                </fieldset>
+
+                <div class="gender">
+                    <legend>Género</legend>
+                    <section>
+                        <div class="hombre">
+                            <label for="hombre">Hombre</label>
+                            <input type="radio" id="hombre" name="gender" value="Hombre" checked>
+                        </div>
+                        <div class="mujer">
+                            <label for="mujer">Mujer</label>
+                            <input type="radio" id="mujer" name="gender" value="Mujer">
+                        </div>
+                        <div class="otro">
+                            <label for="otro">Otro</label>
+                            <input type="radio" id="otro" name="gender" value="Otro">
+                        </div>
+                    </section>
+                </div>
+            
+                <fieldset class="turnos">
+                    <legend>Detalles del Turno</legend>
+                        <label for="branch">Sucursal: </label>
+                        <input type="text" id="branch" name="branch" placeholder="Sucursal">
+                        <label for="day">Día (mm/dd/yyyy): </label>
+                        <input type="text" id="day" name="day" placeholder="Día del turno">
+                        <label for="hour">Hora: </label>
+                        <input type="text" id="hour" name="hour" placeholder="Horario">
+                </fieldset>
+                <input type="submit" value="Reservar" class="btn-reservar">
+            </form>
+            
+            <div class="hours">
+                <h3 class="title_hours">Días y Horarios de Atención</h3>
+                <p class="parrafo_hours">Te esperamos en todas nuestras <a href="sucursales.html">Sucursales</a> en los 
+                días y horarios</p>
+                <ul class="list_hours">
+                    <li>Martes 10:00 a 19:00</li>
+                    <li>Miércoles 10:00 a 19:00</li>
+                    <li>Jueves 10:00 a 19:00</li>
+                    <li>Viernes 10:00 a 20:00</li>
+                    <li>Sábado 09:00 a 20:00</li>
+                    <li>Domingo Cerrado</li>
+                    <li>Lunes Cerrado</li>
+                </ul>
+            </div>
+        </div>
     <footer>
         <br>
         <a class="redsoc" href="https://www.facebook.com/?locale=es_LA" target="_blank"><i class="fab fa-facebook"></i></a>
