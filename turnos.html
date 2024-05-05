@@ -21,7 +21,7 @@
     <h2>Turnos</h2>
         <div class="container" >
                           
-            <form class="form" action="show_data.html" target="_blank">
+            <form class="form">
                 <fieldset class="info">
                     <legend>Información Personal</legend>
                         <label for="firstname">Nombre: </label>
@@ -31,59 +31,66 @@
                         <label for="DNI">D.N.I.: </label>
                         <input type="number" id="DNI" name="D.N.I." placeholder="D.N.I.">
                 </fieldset>
-
-                <div class="gender">
-                    <legend>Género</legend>
-                    <section>
-                        <div class="hombre">
-                            <label for="hombre">Hombre</label>
-                            <input type="radio" id="hombre" name="gender" value="Hombre" checked>
-                        </div>
-                        <div class="mujer">
-                            <label for="mujer">Mujer</label>
-                            <input type="radio" id="mujer" name="gender" value="Mujer">
-                        </div>
-                        <div class="otro">
-                            <label for="otro">Otro</label>
-                            <input type="radio" id="otro" name="gender" value="Otro">
-                        </div>
-                    </section>
-                </div>
-            
+                <section class="gender">
+                    <div class="label-gender">
+                        <label for="género">Género: </label>
+                    </div>
+                    <div class="option-gender">
+                        <input type="radio" id="option1" name="options" value="option1">
+                        <label for="option1">Hombre</label><br>
+                        <input type="radio" id="option2" name="options" value="option2">
+                        <label for="option2">Mujer</label><br>
+                        <input type="radio" id="option3" name="options" value="option3">
+                        <label for="option3">Otro</label>
+                    </div>
+                </section>
                 <fieldset class="turnos">
                     <legend>Detalles del Turno</legend>
                         <label for="branch">Sucursal: </label>
-                        <input type="text" id="branch" name="branch" placeholder="Sucursal">
+                        <select name="branch" id="branch">
+                            <option value=""></option>
+                            <option value="">Olivos</option>
+                            <option value="">Palermo</option>
+                            <option value="">San Telmo</option>
+                            <option value="">La Plata</option>
+                        </select>
                         <label for="day">Día (mm/dd/yyyy): </label>
                         <input type="text" id="day" name="day" placeholder="Día del turno">
                         <label for="hour">Hora: </label>
                         <input type="text" id="hour" name="hour" placeholder="Horario">
                 </fieldset>
-                <input type="submit" value="Reservar" class="btn-reservar">
+                <button type="button" class="btn-reservar" onclick="completarTexto()">Reservar</button>
             </form>
             
             <div class="hours">
-                <h3 class="title_hours">Días y Horarios de Atención</h3>
-                <p class="parrafo_hours">Te esperamos en todas nuestras <a href="sucursales.html">Sucursales</a> en los 
-                días y horarios</p>
-                <ul class="list_hours">
-                    <li>Martes 10:00 a 19:00</li>
-                    <li>Miércoles 10:00 a 19:00</li>
-                    <li>Jueves 10:00 a 19:00</li>
-                    <li>Viernes 10:00 a 20:00</li>
-                    <li>Sábado 09:00 a 20:00</li>
-                    <li>Domingo Cerrado</li>
-                    <li>Lunes Cerrado</li>
-                </ul>
+                <section>
+                    <h3 class="title_hours">Días y Horarios de Atención</h3>
+                    <p class="parrafo_hours">Te esperamos en todas nuestras <a href="sucursales.html">Sucursales</a> en los 
+                    días y horarios</p>
+                </section>    
+                <section><ul class="list_hours">
+                        <li>Martes 10:00 a 19:00</li>
+                        <li>Miércoles 10:00 a 19:00</li>
+                        <li>Jueves 10:00 a 19:00</li>
+                        <li>Viernes 10:00 a 20:00</li>
+                        <li>Sábado 09:00 a 20:00</li>
+                        <li>Domingo Cerrado</li>
+                        <li>Lunes Cerrado</li>
+                    </ul>
+                </section>
+                <section>
+                    <p id="mensaje"></p>
+                </section>
             </div>
         </div>
-    <footer>
-        <br>
-        <a class="redsoc" href="https://www.facebook.com/?locale=es_LA" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a class="redsoc" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <footer>
+            <div class="link-footer">
+                <a class="redsoc" href="https://www.facebook.com/?locale=es_LA" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a class="redsoc" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="p-footer">Derechos reservados @2024 </p>
+        </footer>
 
-        <p>Derechos reservados @2024 </p>
-        <br>
-    </footer>
+    <script src="js/turnos.js"></script>
 </body>
 </html>

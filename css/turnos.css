@@ -1,18 +1,28 @@
+h2{
+    text-align: center;
+    font-family: "Castellar";
+    padding: 1.5rem;
+    background-color: beige;
+}
+
 .container{
     display: grid;
-    grid-template-columns: 20% 40% 40%;
+    grid-template-columns: 50% 50%;
     grid-auto-rows: auto; /* El contenedor crecerá dinámicamente en altura según el contenido */
     overflow-y: auto; /* Agrega un scroll vertical si el contenido excede el tamaño del contenedor */
+    background-color: beige;
 }
 
 .form{
-    grid-column-start: 2;
+    grid-column-start: 1;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    border: solid 2px;
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 2%;
+    margin: 5%;
 }
 
 legend{
@@ -30,28 +40,35 @@ legend{
 }
 
 .gender {
-    display: grid;
-    grid-template-rows: auto auto;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    border: 1px solid;
-    height: 7vw;
+    display: flex;
+    flex-direction: row;
 }
 
-.gender section{
-    grid-row-start: 2;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual ancho */
-    /* justify-content: space-between; */
+.label-gender{
+    flex-basis: 30%; /* El primer elemento ocupa el 30% del espacio */
+}
+
+.option-gender{
+    flex-grow: 1; /* El segundo elemento ocupa el espacio restante */
+    display: flex;
+    justify-content: space-around;
 }
 
 .turnos{
     display: grid;
     grid-template-columns: 30% 70%;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto;
     row-gap: 30%;
     border: none;
     margin-bottom: 10%;
+}
+
+.btn-reservar{
+    width: 200px;
+    height: 50px;
+    align-self: center;
+    background-color: beige;
+    border-radius: 5px;
 }
 
 .btn-reservar:hover{
@@ -60,13 +77,18 @@ legend{
 }
 
 .hours{
-    border: 1px solid;
+    border: 2px solid;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
 }
 
 .title_hours{
     text-align: center;
     margin: 1vw;
     font-size: 25px;
+    font-family: "Castellar";
 }
 
 .parrafo_hours{
@@ -84,4 +106,17 @@ legend{
 ul.list_hours li {
     margin-bottom: 10px; /* Añade un espacio entre cada elemento */
   }
+
+#mensaje{
+    margin: 20px; /* Margen exterior */
+    padding: 20px; /* Relleno interior */
+    border: 2px solid #ccc; /* Borde sólido de 2 píxeles con color gris */
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: #f0f0f0; /* Color de fondo gris claro */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    font-family: Arial, sans-serif; /* Fuente del texto */
+    font-size: 16px; /* Tamaño de la fuente */
+    line-height: 1.5; /* Altura de línea */
+    color: #333; /* Color del texto */
+}
   

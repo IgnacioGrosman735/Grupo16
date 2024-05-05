@@ -1,0 +1,53 @@
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+section{
+    display: grid;
+}
+
+.container{
+    flex: 1;
+    background-color: beige;
+}
+
+.branch-title{
+    text-align: center;
+    margin-top : 3%;
+    font-family: "Castellar";
+}
+
+.branch-map{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas de igual ancho */
+    justify-content: space-around;
+    margin: 100px;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #00000030;
+    width: 80%;
+    height: 175px;background-image: linear-gradient(to bottom right, #ab7b7b, #2b2119); /* Definir un gradiente lineal */
+    justify-content: center;
+    align-items: center;
+}
+
+.branch-link{
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 2vw;
+    font-family: "Castellar";
+}
+
+.branch-adress{
+    color: white;
+}
+
+footer {
+    position: fixed; /* Establece la posición fija */
+    bottom: 0; /* Sitúa el footer en la parte inferior de la ventana */
+    width: 100%; /* Establece el ancho al 100% del viewport */
+}

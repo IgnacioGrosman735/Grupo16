@@ -52,8 +52,32 @@ h1 {
   }
 
 footer{
+    display: flex;
+    flex-direction: column;
     background-color: var(--color-fondo);
     color: white;
     height: 15vh;
     margin-top: 1vw;
+    align-items: center;
+}
+
+.link-footer, .p-footer{
+    flex: 1;
+}
+
+.link-footer{
+    display: flex;
+    align-items: center;
+    width: 240px;
+    justify-content: space-around;
+}
+
+.p-footer{
+    display: flex;
+    align-items: center;
+}
+
+.redsoc i{
+    font-size: 30px; /* Tamaño de los iconos */
+    color: white; /* Cambia el color de los iconos (en este caso, rojo) */  
 }
