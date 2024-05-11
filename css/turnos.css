@@ -32,16 +32,31 @@ legend{
 
 .info{
     display: grid;
-    grid-template-columns: 30% 70%;
     grid-template-rows: auto auto auto;
     row-gap: 30%;
     border: none;
     margin-bottom: 10%;
 }
 
+.form-control{
+    position: relative;
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.error {
+    position: absolute;
+    top: calc(100% + 5px); /* Alinea el mensaje de error justo debajo del input */
+    left: 0;
+    color: red; /* Color rojo para el mensaje de error */
+    font-size: 14px; /* Tamaño de fuente del mensaje de error */
+    display: none; /* Oculta el mensaje de error inicialmente */
+}
+
 .gender {
     display: flex;
     flex-direction: row;
+    margin: 5%;
 }
 
 .label-gender{
@@ -56,8 +71,7 @@ legend{
 
 .turnos{
     display: grid;
-    grid-template-columns: 30% 70%;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto auto;
     row-gap: 30%;
     border: none;
     margin-bottom: 10%;

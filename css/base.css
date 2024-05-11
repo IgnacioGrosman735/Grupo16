@@ -16,6 +16,7 @@ header{
     position: sticky; /* Esta propiedad junto con el "top: 0;" de abajo hace que el elemento quede fijo en la pantalla aunque se haga scroll hacia abajo */
     top: 0;
     width: 100vw;
+    z-index: 1000; /* Valor de z-index alto para mantener el encabezado por encima */
 }
 
 .grid{    
@@ -59,6 +60,7 @@ footer{
     height: 15vh;
     margin-top: 1vw;
     align-items: center;
+    width: 100%;
 }
 
 .link-footer, .p-footer{

@@ -1,0 +1,37 @@
+.container{
+    display: grid;
+    grid-template-rows: 15% 85%;
+    min-height: 80vh;    
+}
+
+.text{
+    color: black;
+    justify-self: center;
+}
+
+h1{
+    font-family: "Castellar";
+}
+
+h3{
+    font-family: "Courier";
+}
+
+.photo-gallery{
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: repeat(4, 1fr);
+    margin-left: 3%;
+    margin-right: 3%;
+    grid-gap: 10px;
+}
+
+.photo{
+    max-height: 100%;
+    max-width: 100%;
+    justify-self: center;
+    align-self: center;
+    margin: 1%;
+    margin-bottom: 10px;
+    border: solid 2px;
+}

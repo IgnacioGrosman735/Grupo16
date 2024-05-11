@@ -15,50 +15,68 @@
             <a class="nav-link" href="index.html">Home</a>
             <a class="nav-link" href="turnos.html">Turnos</a>
             <a class="nav-link" href="sucursales.html">Sucursales</a>
-            <a class="nav-link" href="nosotros.html">Nosotros</a>
+            <a class="nav-link" href="galeria.html">Galería</a>
         </nav>
     </header>    
     <h2>Turnos</h2>
         <div class="container" >
                           
-            <form class="form">
+            <form class="form" novalidate>
                 <fieldset class="info">
                     <legend>Información Personal</legend>
+                    <div class="form-control">
                         <label for="firstname">Nombre: </label>
-                        <input type="text" id="firstname" name="firstname" placeholder="Nombre">
+                        <input type="text" id="firstname" required name="firstname" placeholder="Nombre">
+                        <div class="error" id="error-firstname"></div>
+                    </div>
+                    <div class="form-control">
                         <label for="lastname">Apellido: </label>
-                        <input type="text" id="lastname" name="lastname" placeholder="Apellido">
+                        <input type="text" id="lastname" required name="lastname" placeholder="Apellido">
+                        <div class="error" id="error-lastname"></div>
+                    </div>
+                    <div class="form-control">
                         <label for="DNI">D.N.I.: </label>
-                        <input type="number" id="DNI" name="D.N.I." placeholder="D.N.I.">
+                        <input type="number" id="DNI" required name="D.N.I." placeholder="D.N.I.">
+                        <div class="error" id="error-D.N.I."></div>
+                    </div>
                 </fieldset>
-                <section class="gender">
+                <div class="gender">
                     <div class="label-gender">
-                        <label for="género">Género: </label>
+                        <label>Género: </label>
                     </div>
                     <div class="option-gender">
                         <input type="radio" id="option1" name="options" value="option1">
-                        <label for="option1">Hombre</label><br>
+                        <label for="option1">Hombre</label>
                         <input type="radio" id="option2" name="options" value="option2">
-                        <label for="option2">Mujer</label><br>
+                        <label for="option2">Mujer</label>
                         <input type="radio" id="option3" name="options" value="option3">
                         <label for="option3">Otro</label>
                     </div>
-                </section>
+                </div>
                 <fieldset class="turnos">
                     <legend>Detalles del Turno</legend>
-                        <label for="branch">Sucursal: </label>
-                        <select name="branch" id="branch">
-                            <option value=""></option>
-                            <option value="">Olivos</option>
-                            <option value="">Palermo</option>
-                            <option value="">San Telmo</option>
-                            <option value="">La Plata</option>
-                        </select>
-                        <label for="day">Día (mm/dd/yyyy): </label>
-                        <input type="text" id="day" name="day" placeholder="Día del turno">
-                        <label for="hour">Hora: </label>
-                        <input type="text" id="hour" name="hour" placeholder="Horario">
-                </fieldset>
+                        <div class="form-control">
+                            <label for="branch">Sucursal: </label>
+                            <select required name="branch" id="branch">
+                                <option value=""> </option>
+                                <option value="">Olivos</option>
+                                <option value="">Palermo</option>
+                                <option value="">San Telmo</option>
+                                <option value="">La Plata</option>
+                            </select>
+                            <div class="error" id="error-branch"></div>
+                        </div>
+                        <div class="form-control">                        
+                            <label for="day">Día (mm/dd/yyyy): </label>
+                            <input type="text" id="day" required name="day" placeholder="Día del turno">
+                            <div class="error" id="error-day"></div>
+                        </div>
+                        <div class="form-control">
+                            <label for="hour">Hora: </label>
+                            <input type="text" id="hour" required name="hour" placeholder="Horario">
+                            <div class="error" id="error-hour"></div>
+                        </div>
+                    </fieldset>
                 <button type="button" class="btn-reservar" onclick="completarTexto()">Reservar</button>
             </form>
             
@@ -68,7 +86,7 @@
                     <p class="parrafo_hours">Te esperamos en todas nuestras <a href="sucursales.html">Sucursales</a> en los 
                     días y horarios</p>
                 </section>    
-                <section><ul class="list_hours">
+                <div><ul class="list_hours">
                         <li>Martes 10:00 a 19:00</li>
                         <li>Miércoles 10:00 a 19:00</li>
                         <li>Jueves 10:00 a 19:00</li>
@@ -77,10 +95,10 @@
                         <li>Domingo Cerrado</li>
                         <li>Lunes Cerrado</li>
                     </ul>
-                </section>
-                <section>
+                </div>
+                <div>
                     <p id="mensaje"></p>
-                </section>
+                </div>
             </div>
         </div>
         <footer>

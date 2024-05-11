@@ -29,9 +29,14 @@ section{
     flex-direction: column;
     border: 2px solid #00000030;
     width: 80%;
-    height: 175px;background-image: linear-gradient(to bottom right, #ab7b7b, #2b2119); /* Definir un gradiente lineal */
+    height: 175px;
+    background-image: linear-gradient(to bottom right, #ab7b7b, #2b2119); /* Definir un gradiente lineal */
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    transition: all 450ms;
+    transform-origin: center left;
+    position: relative;
 }
 
 .branch-link{
@@ -44,6 +49,27 @@ section{
 
 .branch-adress{
     color: white;
+    bottom: -100%;
+    padding: 30px;
+    max-height: 100%;
+    overflow-y: auto;
+    line-height: 15px;
+    position: absolute;
+    background-color: var(--color-fondo);
+    box-sizing: border-box;
+    transition: bottom 0.4s ease-in-out;
+    width: 100%;
+    opacity: 0;
+}
+
+.box:hover{
+    opacity: 0.9;
+}
+
+.box:hover .branch-adress {
+    bottom: 0;
+    display: block;
+    opacity: 1;
 }
 
 footer {
