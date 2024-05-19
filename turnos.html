@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/turnos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="imagenes/favicon.ico">
 </head>
 <body>
     <header class="grid">
@@ -35,9 +36,14 @@
                         <div class="error" id="error-lastname"></div>
                     </div>
                     <div class="form-control">
-                        <label for="DNI">D.N.I.: </label>
-                        <input type="number" id="DNI" required name="D.N.I." placeholder="D.N.I.">
-                        <div class="error" id="error-D.N.I."></div>
+                        <label for="phone">Teléfono: </label>
+                        <input type="number" id="phone" required name="phone" placeholder="Número de Teléfono">
+                        <div class="error" id="error-phone"></div>
+                    </div>
+                    <div class="form-control">
+                        <label for="email">Email: </label>
+                        <input type="email" id="email" required name="email" placeholder="Correo Electrónico">
+                        <div class="error" id="error-email"></div>
                     </div>
                 </fieldset>
                 <div class="gender">
@@ -83,8 +89,8 @@
             <div class="hours">
                 <section>
                     <h3 class="title_hours">Días y Horarios de Atención</h3>
-                    <p class="parrafo_hours">Te esperamos en todas nuestras <a href="sucursales.html">Sucursales</a> en los 
-                    días y horarios</p>
+                    <p class="parrafo_hours">Te esperamos en cualquiera de nuestras <a href="sucursales.html">Sucursales</a> en los 
+                    siguientes días y horarios:</p>
                 </section>    
                 <div><ul class="list_hours">
                         <li>Martes 10:00 a 19:00</li>

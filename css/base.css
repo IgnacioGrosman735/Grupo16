@@ -83,3 +83,33 @@ footer{
     font-size: 30px; /* Tamaño de los iconos */
     color: white; /* Cambia el color de los iconos (en este caso, rojo) */  
 }
+
+/*MEDIA QUERYS*/
+
+/*Tablet*/
+
+@media screen and (min-width: 360px) and (max-width: 1074px) {
+    .grid{
+        grid-template-columns: 1fr;
+    }
+
+    .navbar{
+        font-size: 3vw;
+    }
+}
+
+/*Samsung Galaxy S8*/
+
+@media screen and (max-width: 360px) {
+    h1{
+        font-size: 9vw;
+    }
+
+    .navbar{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        font-size: 5vw;
+        justify-items: center;
+    }
+}

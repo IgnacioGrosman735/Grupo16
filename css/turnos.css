@@ -38,6 +38,12 @@ legend{
     margin-bottom: 10%;
 }
 
+legend{
+    font-size: 25px;
+    font-family: "Castellar";
+    font-weight: bold;
+}
+
 .form-control{
     position: relative;
     display: grid;
@@ -106,7 +112,8 @@ legend{
 }
 
 .parrafo_hours{
-    text-align: center;
+    font-family: "Eras ITC";
+    text-align: justify;
     margin: 2vw;
 }
 
@@ -119,6 +126,7 @@ legend{
 
 ul.list_hours li {
     margin-bottom: 10px; /* Añade un espacio entre cada elemento */
+    font-family: "Eras ITC";
   }
 
 #mensaje{
@@ -128,7 +136,7 @@ ul.list_hours li {
     border-radius: 10px; /* Bordes redondeados */
     background-color: #f0f0f0; /* Color de fondo gris claro */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-    font-family: Arial, sans-serif; /* Fuente del texto */
+    font-family: "Eras ITC";
     font-size: 16px; /* Tamaño de la fuente */
     line-height: 1.5; /* Altura de línea */
     color: #333; /* Color del texto */

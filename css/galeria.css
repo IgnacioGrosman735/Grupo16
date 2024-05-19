@@ -1,7 +1,7 @@
 .container{
     display: grid;
     grid-template-rows: 15% 85%;
-    min-height: 80vh;    
+    min-height: 90vh;
 }
 
 .text{
@@ -11,10 +11,12 @@
 
 h1{
     font-family: "Castellar";
+    text-align: center; 
 }
 
 h3{
     font-family: "Courier";
+    text-align: center;
 }
 
 .photo-gallery{
@@ -24,14 +26,55 @@ h3{
     margin-left: 3%;
     margin-right: 3%;
     grid-gap: 10px;
+    background-color: rgb(92, 46, 46);
+    padding: 30px;
 }
 
 .photo{
-    max-height: 100%;
+    max-height: 400px;
     max-width: 100%;
     justify-self: center;
     align-self: center;
     margin: 1%;
     margin-bottom: 10px;
     border: solid 2px;
+}
+
+/*MEDIA QUERYS*/
+
+/*Tablet*/
+
+@media screen and (min-width: 360px) and (max-width: 1074px) {
+
+    .container{
+        grid-template-rows: auto;
+    }
+
+    .text{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .photo-gallery{
+        grid-template-rows: repeat(4, 25%);
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    footer{
+        margin-top: 3vh;
+    }
+}
+
+/*Samsung Galaxy S8*/
+
+@media screen and (max-width: 360px) {
+    .photo-gallery{
+        grid-template-rows: repeat(8, 12.5%);
+        grid-template-columns: 1fr;
+        padding-bottom: 80px;
+    }
+
+    footer{
+        margin-top: 3vh;
+    }
 }
