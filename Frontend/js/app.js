@@ -1,4 +1,5 @@
 document.getElementById('get-data').addEventListener('click', fetchData);
+document.getElementById('create-form').addEventListener('submit', createNewTurno);
 
 function formatDate(dateString) {
     const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
