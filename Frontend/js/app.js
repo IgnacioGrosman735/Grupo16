@@ -7,7 +7,7 @@ function formatDate(dateString) {
 }
 
 function fetchData() {
-    fetch('http://127.0.0.1:5000/api/turnos/')
+    fetch('http://127.0.0.1:5000/api/turnos',)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Error en la respuesta de la API');
@@ -29,6 +29,7 @@ function fetchData() {
                     <th>Teléfono</th>
                     <th>Email</th>
                     <th>Día</th>
+                    <th>Acciones</th>
                 </tr>
             `;
             data.forEach(turno => {
@@ -40,6 +41,10 @@ function fetchData() {
                     <td>${turno.telefono}</td>
                     <td>${turno.email}</td>
                     <td>${formatDate(turno.dia)}</td>
+                    <td>
+                        <button class="delete-btn" data-id="${turno.id_turno}">Borrar</button>
+                        <button class="editar-btn" data-id="${turno.id_turno}">Editar</button>
+                    </td>
                 `;
                 table.appendChild(row);
             });
@@ -47,6 +52,22 @@ function fetchData() {
             const output = document.getElementById('data-output');
             output.innerHTML = '';
             output.appendChild(table);
+
+            // Agregar event listener a todos los botones de borrar
+            document.querySelectorAll('.delete-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const idTurno = this.getAttribute('data-id');
+                    deleteTurno(idTurno);
+                });
+            });
+
+            // Agregar event listener a todos los botones de editar
+            document.querySelectorAll('.editar-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const idTurno = this.getAttribute('data-id');
+                    updateTurno(idTurno);
+                });
+            });
         })
         .catch(error => {
             console.error('Error al obtener los datos:', error);
@@ -57,6 +78,7 @@ function fetchData() {
 function createNewTurno(event) {
     event.preventDefault();
     
+    const id_turno = document.getElementById('id_turno').value;
     const nombre = document.getElementById('nombre').value;
     const apellido = document.getElementById('apellido').value;
     const telefono = document.getElementById('telefono').value;
@@ -71,12 +93,82 @@ function createNewTurno(event) {
         dia: dia
     };
 
-    createTurno(turnoData);
+    if (id_turno) {
+        // Si hay un id_turno, actualizamos el turno existente
+        saveTurno(id_turno, turnoData);
+    } else {
+        // Si no hay id_turno, creamos un nuevo turno
+        createTurno(turnoData);
+    }
 }
 
 function createTurno(turnoData) {
     fetch('http://127.0.0.1:5000/api/turnos', {
         method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(turnoData),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error al crear el turno');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Turno creado:', data);
+        fetchData();  // Actualizar la tabla después de crear el turno
+    })
+    .catch(error => {
+        console.error('Error al crear el turno:', error);
+    });
+}
+
+function deleteTurno(idTurno) {
+    fetch(`http://127.0.0.1:5000/api/turnos/${idTurno}`, {
+        method: 'DELETE'
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error al eliminar el turno');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Turno eliminado:', data);
+        fetchData();  // Recargar los datos después de eliminar el turno
+    })
+    .catch(error => {
+        console.error('Error al eliminar el turno:', error);
+    });
+}
+
+function updateTurno(idTurno) {
+    fetch(`http://127.0.0.1:5000/api/turnos/${idTurno}`,)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error en la respuesta de la API');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Asignar los datos del turno a los campos del formulario
+        document.getElementById('id_turno').value = data.id_turno;
+        document.getElementById('nombre').value = data.nombre;
+        document.getElementById('apellido').value = data.apellido;
+        document.getElementById('telefono').value = data.telefono;
+        document.getElementById('email').value = data.email;
+        document.getElementById('dia').value = data.dia;
+    })
+    .catch(error => {
+        console.error('Hubo un problema con la operación de fetch:', error);
+    });
+}
+
+function saveTurno(idTurno, turnoData) {
+    fetch(`http://127.0.0.1:5000/api/turnos/${idTurno}`, {
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
         },

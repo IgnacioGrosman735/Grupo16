@@ -18,13 +18,16 @@
             <a class="nav-link" href="turnos.html">Turnos</a>
             <a class="nav-link" href="sucursales.html">Sucursales</a>
             <a class="nav-link" href="galeria.html">Galería</a>
+            <a class="nav-link" href="crud.html">CRUD</a>
         </nav>
     </header>
     <main>
         <h1>Interacción con la API</h1>
-        <div id="data-output"></div>
 
         <form id="create-form">
+
+            <input type="hidden" id="id_turno">
+
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" required><br><br>
             
@@ -42,6 +45,8 @@
             
             <button type="submit">Crear Turno</button>
         </form>
+        
+        <div id="data-output"></div>
         
         <button id="get-data">Obtener Datos</button>
 
